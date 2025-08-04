@@ -1,36 +1,88 @@
+Deploy Flask + MySQL App via EC2, Docker, and Jenkins CI/CD
+🎯 Objective:
+You are required to set up a Flask application with a MySQL database, first running on an EC2 instance, then Dockerizing it, and finally deploying everything using a Jenkins pipeline. This represents a real-world production-ready DevOps deployment workflow.
+
+✅ Part 1: Run Flask App with MySQL on EC2 Server (Manual Setup)
+📌 Tasks:
+Install MySQL on EC2 and configure it to allow remote connections.
+
+Create Database and Table:
+
+Database: mydb
+
+Table: users
+
+Install Python packages: flask, mysql-connector-python, werkzeug
+
+Start the Flask application and ensure it connects to the MySQL database successfully.
+
+Access your app via http://<ec2-ip>:5000
+
+✅ Part 2: Dockerize the Application
+📌 Tasks:
+Create a Docker network called my-network.
+
+Create a MySQL Docker container using the mysql:8.0 image.
+
+Update app.py to connect to the MySQL container by hostname (mysql_container).
+
+Write a Dockerfile for the Flask app.
+
+Build and run the Flask container inside the same Docker network.
+
+Confirm both services run and communicate correctly.
+
+Test at: http://<ec2-ip>:5000
+
+✅ Part 3: Use Docker Compose (Optional but Recommended)
+📌 Tasks:
+Create a docker-compose.yml file for both services.
+
+Run the app using:
+
+Copy
+Edit
+docker-compose up -d
+Stop it using:
+
+Copy
+Edit
+docker-compose down
+✅ Part 4: CI/CD Deployment with Jenkins (Important ✅)
+📌 New Task:
+⚙️ Automate the Full Deployment via Jenkins Pipeline
+
+❗ Add this important line in your assignment instructions:
+
+🛠️ “You must also deploy the entire Flask + MySQL application stack using a Jenkins pipeline. This includes cloning the source code, building Docker images, pushing them to DockerHub, and running the containers on your EC2 instance.”
+
+📌 Jenkins Pipeline Requirements:
+Pull source code from GitHub.
+
+Build the Flask Docker image using a Dockerfile.
+
+Use Jenkins credentials to push the image to DockerHub.
+
+Deploy the application using either:
+
+Docker CLI (docker run)
+
+or Docker Compose (docker-compose up)
+
+Jenkinsfile example should include stages:
+
+Checkout
+
+Docker Build
+
+Docker Push
+
+Docker Run / Compose Up
 
 
-![image](https://github.com/user-attachments/assets/3278cd2c-b241-4a7b-ac36-10d51662c59c)
 
-## Projects Video
-<table>
-  <tr>
-    <td>
-      <a href="https://www.youtube.com/watch?v=VcZaCSAO1wo" target="_blank">
-        <img src="https://ytcards.demolab.com/?id=VcZaCSAO1wo&title=Part+-+32.+Created+CI%2FCD+Pipeline+For+Flask+Application+%7C+DevOps+Project+%7C+%40SenDevOps&lang=en&timestamp=0&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=250&border_radius=5" 
-        alt="Part - 32. Created CI/CD Pipeline For Flask Application | DevOps Project | @SenDevOps" width="250" style="border-radius:5px;">
-      </a>
-    </td>
-    <td>
-      <a href="https://www.youtube.com/watch?v=jRUFai_M-C0" target="_blank">
-        <img src="https://ytcards.demolab.com/?id=jRUFai_M-C0&title=Part+-+31.+Deploy+Flask+App+Using+Docker+Compose+%7C+DevOps+Project+%7C+%40SenDevOps&lang=en&timestamp=0&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=250&border_radius=5" 
-        alt="Part - 31. Deploy Flask App Using Docker Compose | DevOps Project | @SenDevOps" width="250" style="border-radius:5px;">
-      </a>
-    </td>
-    <td>
-      <a href="https://www.youtube.com/watch?v=-HfM4pe2NAw&t=61s" target="_blank">
-        <img src="https://ytcards.demolab.com/?id=-HfM4pe2NAw&title=Part+-+30.+Deploy+Flask+App+With+Docker+%7C+DevOps+Projects+%7C+%40SenDevOps&lang=en&timestamp=0&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=250&border_radius=5" 
-        alt="Part - 30. Deploy Flask App With Docker | DevOps Projects | @SenDevOps" width="250" style="border-radius:5px;">
-      </a>
-    </td>
-    <td>
-      <a href="https://www.youtube.com/watch?v=IIC3LfnyOJI&t=47s" target="_blank">
-        <img src="https://ytcards.demolab.com/?id=IIC3LfnyOJI&title=Part+-+29.+Deploy+Flask+App+on+EC2+Using+MySQL+Database+%7C+%40SenDevOps&lang=en&timestamp=0&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=250&border_radius=5" 
-        alt="Part - 29. Deploy Flask App on EC2 Using MySQL Database | @SenDevOps" width="250" style="border-radius:5px;">
-      </a>
-    </td>
-  </tr>
-</table>
+
+
 
 
 
